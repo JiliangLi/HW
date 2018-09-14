@@ -1,4 +1,5 @@
 #sep 13, 2018
+#accepting a date as input and writing the day of the week on which  hat date falls
 
 import sys
 import math
