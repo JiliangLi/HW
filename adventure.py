@@ -65,115 +65,120 @@ def game():
 
 	generated_list = [number1,number2, number3, number4]
 
-	usernumber1 = input("Please enter the first number in your equation: ")
-	while True:
-		if usernumber1 == number1:
-			usersymbol1_usernumber2()
-			#usersymbo(number1)
-			while True:
-				if usernumber2 == number2:
-					usersymbol2_usernumber3()
 
-					while True:		
-						if usernumber3 == number3:
-							usersymbol3_usernumber4()
-							while True:
-								if usernumber4 == number4:
-									operation(result, usersymbol3, usernumber4)
-									break
-								else:
-									usernumber4 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
-							break
+	if number1 == usernumber1 and !v1
 
-						if usernumber3 == number4:
-							usersymbol3_usernumber4()
-							while True:
-								if usernumber4 == number3:
-									operation(result, usersymbol3, usernumber4)
-									break
-								else:
-									usernumber4 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
-							break
+	# usernumber1 = input("Please enter the first number in your equation: ")
+	# while True:
+	# 	if usernumber1 == number1:
+	# 		usersymbol_usernumber(1, usersymbol1, None, usernumber1, usernumber2)
+	# 		#usersymbo(number1)
+	# 		while True:
+	# 			if usernumber2 == number2:
+	# 				usersymbol_usernumber(2, usersymbol2, usersymbol3, usernumber2, usernumber3)
+
+
+	# 				while True:		
+	# 					if usernumber3 == number3:
+	# 						usersymbol3_usernumber4()
+	# 						while True:
+	# 							if usernumber4 == number4:
+	# 								operation(result, usersymbol3, usernumber4)
+	# 								break
+	# 							else:
+	# 								usernumber4 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
+	# 						break
+
+	# 					if usernumber3 == number4:
+	# 						usersymbol3_usernumber4()
+	# 						while True:
+	# 							if usernumber4 == number3:
+	# 								operation(result, usersymbol3, usernumber4)
+	# 								break
+	# 							else:
+	# 								usernumber4 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
+	# 						break
 						
-						else:
-							usernumber3 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the third number in your equation: ")
-					break
+	# 					else:
+	# 						usernumber3 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the third number in your equation: ")
+	# 				break
 
-				if usernumber2 == number3:
-					usersymbol2_usernumber3()
+	# 			if usernumber2 == number3:
+	# 				usersymbol_usernumber(2, usersymbol2, usersymbol3, usernumber2, usernumber3)
 					
-					while True:
-						if usernumber3 == number4:
-							usersymbol3_usernumber4()
-							while True:
-								if usernumber4 == number2:
-									operation(result, usersymbol3, usernumber4)
-									break
-								else:
-									usernumber4 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
-							break
+	# 				while True:
+	# 					if usernumber3 == number4:
+	# 						usersymbol3_usernumber4()
+	# 						while True:
+	# 							if usernumber4 == number2:
+	# 								operation(result, usersymbol3, usernumber4)
+	# 								break
+	# 							else:
+	# 								usernumber4 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
+	# 						break
 
-						if usernumber3 == number2:
-							usersymbol3_usernumber4()
-							while True:
-								if usernumber4 == number4:
-									operation(result, usersymbol3, usernumber4)
-									break
-								else:
-									usernumber4 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
-							break
+	# 					if usernumber3 == number2:
+	# 						usersymbol3_usernumber4()
+	# 						while True:
+	# 							if usernumber4 == number4:
+	# 								operation(result, usersymbol3, usernumber4)
+	# 								break
+	# 							else:
+	# 								usernumber4 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
+	# 						break
 
-						else:
-							usernumber3 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the third number in your equation: ")
+	# 					else:
+	# 						usernumber3 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the third number in your equation: ")
 
-					break
+	# 				break
 
-				if usernumber2 == number4:
-					usersymbol2_usernumber3()
-					while True:
-						if usernumber3 == number2:
-							usersymbol3_usernumber4()
-							while True:
-								if usernumber4 == number3:
-									operation(result, usersymbol3, usernumber4)
-									break
-								else:
-									usernumber4 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
-							break
+	# 			if usernumber2 == number4:
+	# 				usersymbol_usernumber(2, usersymbol2, usersymbol3, usernumber2, usernumber3)
+	# 				while True:
+	# 					if usernumber3 == number2:
+	# 						usersymbol_usernumber(3, usersymbol3, usersymbol4, usernumber3, usernumber4)
 
-						if usernumber3 == number3:
-							usersymbol3_usernumber4()
-							while True:
-								if usernumber4 == number2:
-									operation(result, usersymbol3, usernumber4)
-									break
-								else:
-									usernumber4 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
-							break
-						else:
-							usernumber3 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the third number in your equation: ")
-					break
-				else:
-					usernumber2 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the second number in your equation: ")
+	# 						while True:
+	# 							if usernumber4 == number3:
+	# 								operation(result, usersymbol3, usernumber4)
+	# 								break
+	# 							else:
+	# 								usernumber4 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
+	# 						break
 
-			break
+	# 					if usernumber3 == number3:
+	# 						usersymbol3_usernumber4()
+	# 						while True:
+	# 							if usernumber4 == number2:
+	# 								operation(result, usersymbol3, usernumber4)
+	# 								break
+	# 							else:
+	# 								usernumber4 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
+	# 						break
+	# 					else:
+	# 						usernumber3 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the third number in your equation: ")
+	# 				break
+	# 			else:
+	# 				usernumber2 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the second number in your equation: ")
 
-
-		if usernumber1 == number2:
-			pass
-			break
-
-		if usernumber1 == number3:
-			pass
-			break
+	# 		break
 
 
-		if usernumber1 == number4:
-			pass
-			break
+	# 	if usernumber1 == number2:
+	# 		pass
+	# 		break
 
-		else:
-			usernumber1 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
+	# 	if usernumber1 == number3:
+	# 		pass
+	# 		break
+
+
+	# 	if usernumber1 == number4:
+	# 		pass
+	# 		break
+
+	# 	else:
+	# 		usernumber1 = input("Please only use the provided number and do not use each provided number more than once or use. Enter the last number in your equation: ")
 
 
 def operation(constant1, symbol, constant2):
@@ -252,11 +257,34 @@ def usersymbol3_usernumber4():
 
 	operation(result, usersymbol2, usernumber3)
 	usersymbol3 = input("Please enter the third operator in your equation. \nYour may only choose from one of the following operators: \n+, -, *, /, ** or ^\n")
-	usersymbok3 = operator_check(usersymbol3)
+	usersymbol3 = operator_check(usersymbol3)
 	usernumber4 = input("Please enter the last number in your equation: ")
+
+def usersymbol_usernumber(first, user_symbol1, user_symbol2, user_number1, user_number2):
+	global allowed_symbols
+	global number1, number2, number3, number4
+	global usernumber1, usernumber2, usernumber3, usernumber4
+	global result
+	global usersymbol1, usersymbol2, usersymbol3
+
+	if first == 1:
+		user_symbol1 = input("Please enter the first operator in your equation. \nYour may only choose from one of the following operators: \n+, -, *, /, ** or ^\n")
+		user_symbol1 = operator_check(usersymbol1)
+		user_number2 = input("Please enter the second number in your equation: ")
+
+	if first == 2 or first ==3:
+		operation(result, user_symbol1, user_number1)
+		user_symbol2 = input("Please enter the third operator in your equation. \nYour may only choose from one of the following operators: \n+, -, *, /, ** or ^\n")
+		user_symbol2 = operator_check(usersymbol3)
+		user_number2 = input("Please enter the last number in your equation: ")
 
 
 start()
+
+def numcheck():
+	#ask for #
+	#error checking
+#if 
 
 
 
