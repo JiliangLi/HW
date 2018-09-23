@@ -1,25 +1,21 @@
-import random as r
+while True:
+	try:
+		user_choice_n = int(input("Please enter the""number in your equation: "))
 
-def game(name):
+		while True:
+		
+			if (3 == user_choice_n):
 
-	number1 = str(r.randrange(1,14,1))
-	number2 = str(r.randrange(1,14,1))
-	number3 = str(r.randrange(1,14,1))
-	number4 = str(r.randrange(1,14,1))
+				break
 
-	print(number1)
-	print(number2)
-	print(number3)
-	print(number4)
+			else:
+				user_choice_n = int(input("Please only use the provided number and do not use each provided number more than once or use. Enter the""number in your equation:"))
+			
+		break
 
+	except ValueError:
+		print("Yeah,no. That's not an integer.")
 
-	usernumber1 = input("Please enter the first number in your solution: ")
-
-	if usernumber1 == number1 or usernumber1 == number2 or usernumber1 == number3 or usernumber1 == number4:
-		print("Hello")
-
-	else:
-		print("Please enter one of the provided number")
-		game("Payer one")
-
-game("player one")
+	
+#	except ValueError:
+#		print("Yeah,no. That's not an integer.")
