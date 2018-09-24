@@ -8,7 +8,7 @@
 #In this game, the user will be provided with four different randomly generated integers ranging from 1 to 13.
 #The allowed operatoions are addition, subtraction, multiplication, division, and exponentiation.
 #In this game the user is only allowed to use each provided number once, and must use all four provided numbers.
-#The user will be asked if he/she wants to start over when he/she 1)cannot find a solution 2)does not get the answer 24 3)wins the game
+#The user will be asked if he/she wants to start over when he/she 1)does not get the answer 24 2)wins the game
 #The user may not use parenthesis in his/her equations.
 
 import random as r
