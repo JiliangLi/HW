@@ -1,3 +1,4 @@
+#The 24 Game
 #sep17-sep23, 2018
 #by Eric Li
 #sources: Jerry Wang, Revant Kantamneni, Ms. Healey
@@ -14,7 +15,6 @@ import random as r
 import sys
 import time
 import math
-import os  
 
 #a list of all the allowed symbols
 allowed_symbols = [ '+', '-', '/', '**', '^', '*']
@@ -75,7 +75,7 @@ def start():
 
 
 def game():
-	#allowing the list "numebrs" to change each time the function "game" is called
+	#allowing the list "numbers" to change each time the function "game" is called
 	global numbers, userOrder
 
 	#reset the numbers the user has entered everytime the function is called
@@ -90,7 +90,7 @@ def game():
 	print(numbers)
 	time.sleep(1)
 	#asking the user if he/she has a solution in his/her mind
-	print("Do you see a way to get to the answer 24?\n   1)Yes\n   2)No")
+	print("Do you see a way to get to the answer 24?\n   1)Enter 1 for Yes\n   2)Press ENTER for No (new numbers will be generated)")
 	solution = input()
 
 	#response to the user's choice & error checking
@@ -112,7 +112,7 @@ def game():
 				#the program checks to see if the answer is correct
 				#if the answer is correct, the program congradulates the user, and asks if the user wants to play again
 				if result == 24:
-					print("Congratulations, "+username+"! You won!")
+					print("\nCongratulations, "+username+"! You won!\n")
 					start_over()
 
 				#if the answer is not correct, the program states that there is an error, and asks if the user wants to play again
@@ -121,13 +121,13 @@ def game():
 					start_over()
 
 			# if the user does not gave a solution in mind, the program asks him/her if he/she wants to start over
-			elif solution == "2":
-				start_over()
+			elif solution == "":
+				game()
 
 			#error checking
 			else:
-				print("Please enter 1 or 2 to indicate your decision")
-				print("Do you see a way to get to the answer 24?\n   1)Yes\n   2)No")
+				print("Please enter 1 or press ENTER to indicate your decision")
+				print("Do you see a way to get to the answer 24?\n   1)Enter 1 for Yes\n   2)Press ENTER for No (new numbers will be generated)")
 				solution = input()
 
 
