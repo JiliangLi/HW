@@ -8,8 +8,8 @@
 import sys
 import random
 
-row = sys.argv[1]
-column = sys.argv[2]
+row = sys.argv[2]
+column = sys.argv[1]
 b = sys.argv[3]
 count = 0
 row_count = 1
