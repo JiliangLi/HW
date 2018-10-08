@@ -110,6 +110,7 @@ def clear():			#the function that is run when the user decides to clear an unrev
 
 	if field[user_y][user_x] == "*":			#scenario when the user clears a bomb
 		field_display[user_y][user_x] = field[user_y][user_x]
+		print("")
 		print_field_display()
 		print("\nYou Lost")			#showing that the user loses
 		bomb_count = int(b)			#indicating that the user has already completed the game
@@ -117,6 +118,7 @@ def clear():			#the function that is run when the user decides to clear an unrev
 
 	elif field[user_y][user_x] != 0 and field[user_y][user_x] != "*":			#scenario when the user clears a non-zero space
 		field_display[user_y][user_x] = field[user_y][user_x]			#only the non-zero space is revealed
+		print("")
 		print_field_display()
 
 	else:			#scenario when the user clears a zero space: all touching zero spaces will be revealed, as well as the first non-zero contiguous spaces
@@ -141,6 +143,7 @@ def clear():			#the function that is run when the user decides to clear an unrev
 									doublecheck_x_y.append([check_y+i, check_x+j])			#indicate that this coordinate is alreay waiting to be checked
 			check_x_y.pop(0)			#once the coorindate is checked, remove it from the list so that it doesn't get checked the second time
 
+		print("")
 		print_field_display()			#print the field
 
 
@@ -185,7 +188,7 @@ def minesweeper():			#the main game function
 	completion_check()			#check to see if the user has revealed all the safe spaces already/check to see if the game is over
 
 	while bomb_count != int(b):			#while all bombs are not either left blank or flagged/while the game is still not over
-		print("Please choose another space:")
+		print("\nPlease choose another space:")
 		
 		if number_count == 0:		#print the following if this is the first time the function is run
 			print("Note: Enter just the coordinate if you want to clear that space.\n      Enter f after the coordinate if you intend to flag/unflag the chosen space.")
@@ -195,17 +198,19 @@ def minesweeper():			#the main game function
 			try:
 				userchoice = input("")
 				userchoice_split = userchoice.split()
-				user_y = int(userchoice_split[0]) - 1			#turning the user's input into a list, which allows the program to use each individual number more easily
-				user_x = int(userchoice_split[1]) -1
 				if (len(userchoice_split) == 3 or len(userchoice_split) == 2):			#if the coordinate entered is valid
+					user_y = int(userchoice_split[0]) - 1			#turning the user's input into a list, which allows the program to use each individual number more easily
+					user_x = int(userchoice_split[1]) -1
 					if 0 < user_y+1 <= int(row) and 0 < user_x+1 <= int(column):			#if the coordinate entered is within the matrix
 						if len(userchoice_split) == 3:			#if there's three entries
-							if userchoice_split[2] == "f":			#unflag the space if the user chooses a flaged space
+							if userchoice_split[2].lower() == "f":			#unflag the space if the user chooses a flaged space
 								if field_display[user_y][user_x] == "F":
 									field_display[user_y][user_x] = "·"
+									print("")
 									print_field_display()
 								elif field_display[user_y][user_x] == "·":			#flag the space if the user chooses a unflagged space
 									field_display[user_y][user_x] = "F"
+									print("")
 									print_field_display()
 								else:			#making sure that the user doesn't flag a revealed safe space
 									print("You may not select a revealed space.")
