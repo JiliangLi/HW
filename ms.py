@@ -1,7 +1,8 @@
+# the minesweeper 
 # oct 1 - oct 6, 2018
-# Eric Li
-
-# the minesweeper
+# by Eric Li
+# source: Ms. Healey
+# on my honor
 
 # Th user provide the width (W) and the height (H) for the program
 # as well as the number of  bombs on the board.  
