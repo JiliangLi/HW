@@ -17,7 +17,7 @@ color3 = 0
 for x in range(512):
 	for y in range(512):
 		image.putpixel((x,y),(red,color2,color3))
-		if red == 255 or red == 0 or color2 == 255 or color2 == 0 or color3 == 255 or color3 ==0:
+		if red == 255 or red == 0:
 			reference += 1
 
 		if reference % 2 == 1:
