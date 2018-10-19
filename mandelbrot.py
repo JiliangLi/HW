@@ -2,8 +2,7 @@
 from PIL import Image
 import random
 
-imgx = 513
-imgy = 513
+imgx, imgy = 513, 513
 
 image = Image.new("RGB",(imgx,imgy))
 
