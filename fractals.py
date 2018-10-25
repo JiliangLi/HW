@@ -103,10 +103,10 @@ def fractal(a):			# the input that allows for the function to be used by all ima
 
 	# the for loop that checks through every pixel/cell
 	for y in range(imgy):
-			cy = y * (yb-ya)/(imgy-1) + ya 		#the y value for the cell; calculated by evenly spacing out the interval
+			cy = y * (yb-ya)/(imgy-1) + ya 		# the y value for the cell; calculated by evenly spacing out the interval
 			coordinate_y = y
 			for x in range(imgx):
-				cx = x*(xb-xa)/(imgx-1) + xa 		#the x value for the cell; calculated by evenly spacing out the interval
+				cx = x*(xb-xa)/(imgx-1) + xa 		# the x value for the cell; calculated by evenly spacing out the interval
 				coordinate_x = x
 				count = 0			# reset the number of iterations for each pixel/cell
 				if a == 1:			# if the first image is being generated
@@ -134,7 +134,7 @@ def fractal(a):			# the input that allows for the function to be used by all ima
 								r -= 20*(i/5)
 								g += 20*(i/7)
 								b += 20*(i/3)
-								break			#once that is done, the loops breaks so that it is not done to the same pixel twice
+								break			# once that is done, the loops breaks so that it is not done to the same pixel twice
 				image.putpixel((x, y),(int(r),int(g),int(b)))			# color is given to the pixel
 
 	image.show()			# the prpgram shows the image 
