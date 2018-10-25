@@ -1,9 +1,11 @@
 from PIL import Image
+import math
+import colorsys
 
-xa, xb = -2.0, 2.0
-ya, yb = -2.0, 2.0
+xa, xb = 0.3025074005126953, 0.3064098358154297
+ya, yb = 0.021409034729003906, 0.02531147003173828
 
-imgx, imgy = 512, 512
+imgx, imgy = 1024, 1024
 
 maxIt = 256
 
@@ -20,10 +22,14 @@ for y in range(imgy):
 				break
 			z = z**2 + c
 
-		r = i
-		g = 0
-		b = 0
+		h, l, s = math.sin(i), (i*3)%100, i%100
 
-		image.putpixel((x,y),(r,g,b))
+		(r, g, b) = colorsys.hls_to_rgb(h, l, s)
+		
+		colors = (int(r), int(g), int(b))
+
+
+		image.putpixel((x,y),colors)
 
 image.show()
+image.save("mandelbrot_demo.png", "PNG")
