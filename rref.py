@@ -5,9 +5,9 @@ while True:
 		print("Please enter the dimension of the matrix: \n(for instance, if the matrix is a 2 by 5 matrix, enter 2*5)")
 		dimension_raw = input()
 		dimension = dimension_raw.split('*')
-		dimension[0] = int(dimension[0])
-		dimension[1] = int(dimension[1])
 		if len(dimension) == 2:
+			dimension[0] = int(dimension[0])
+			dimension[1] = int(dimension[1])
 			break
 		else:
 			print("please enter a valid dimension connected by '*'")
@@ -18,16 +18,52 @@ while True:
 m = dimension[0]
 n = dimension[1]
 
-matrix_list = [[0 for i in range(m)]for i in range(n)]
+rows= []
+matrix_list = [[0 for i in range(n)]for i in range(m)]
+for i in range(m):
+		position = "row "+str(i+1)
+		rows.append(position)
+		print("Please enter the values of the entries in "  + position+ " (separated by space): ")
+		rowi = input()
+		rowi = rowi.split()
+		matrix_list[i] = rowi
+
 for i in range(m):
 	for j in range(n):
-		position = "v"+str(i+1)+str(j+1)
-
-		matrix_list[i][j] = input("Please enter the value of entry "  + position+ ": ")
-
-print(matrix_list)
+		matrix_list[i][j] = float(matrix_list[i][j])
 		
-for i in range(m):
-	ri = np.array(matrix_list[m])
-print(r2)
+matrix_array = np.array(matrix_list)
+
+def check_zero_rows():
+	global matrix_list, matrix_array, m, n
+	count = 0
+	for i in range(m):
+		if np.all(matrix_array[i] == 0) == True:
+			row_moved = matrix_array[i]
+			np.delete(matrix_array, i)
+			# np.append(matrix_array, row_moved)
+			count += 1
+	m -= count
+
+check_zero_rows()
+print(matrix_array)
+# for j in range(1, n-1):
+for i in range(1, m):
+	matrix_array[i] = matrix_array[i] - ((matrix_array[i][0]/matrix_array[0][0])*matrix_array[0])
+check_zero_rows()
+for i in range(2, m):
+	matrix_array[i] = matrix_array[i] - ((matrix_array[i][1]/matrix_array[1][1])*matrix_array[1])
+check_zero_rows()
+
+print(matrix_array)
+
 # numbers = [float(x.strip()) for x in input_list]
+
+# thisdict #python dictionaries 
+
+# addition
+# subtraction
+# div
+# mul
+
+# 
