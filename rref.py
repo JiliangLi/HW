@@ -40,20 +40,24 @@ def check_zero_rows():
 	for i in range(m):
 		if np.all(matrix_array[i] == 0) == True:
 			row_moved = matrix_array[i]
-			np.delete(matrix_array, i)
-			# np.append(matrix_array, row_moved)
+			matrix_array = np.delete(matrix_array, (i), axis = 0)
 			count += 1
 	m -= count
+	for i in range(count):
+		matrix_array = np.append(matrix_array, [row_moved], axis = 0)
 
 check_zero_rows()
+print(m)
+# check_zero_rows()
 print(matrix_array)
-# for j in range(1, n-1):
-for i in range(1, m):
-	matrix_array[i] = matrix_array[i] - ((matrix_array[i][0]/matrix_array[0][0])*matrix_array[0])
-check_zero_rows()
-for i in range(2, m):
-	matrix_array[i] = matrix_array[i] - ((matrix_array[i][1]/matrix_array[1][1])*matrix_array[1])
-check_zero_rows()
+
+# for j in range(0, n-2):
+# 	for i in range(j+1, m):
+# 		matrix_array[i] = matrix_array[i] - ((matrix_array[i][j]/matrix_array[j][j])*matrix_array[j])
+# 		check_zero_rows()
+# for i in range(2, m):
+# 	matrix_array[i] = matrix_array[i] - ((matrix_array[i][1]/matrix_array[1][1])*matrix_array[1])
+# check_zero_rows()
 
 print(matrix_array)
 
