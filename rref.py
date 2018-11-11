@@ -18,7 +18,7 @@ while True:
 m = dimension[0]
 n = dimension[1]
 
-rows= []
+rows = []
 matrix_list = [[0 for i in range(n)]for i in range(m)]
 for i in range(m):
 		position = "row "+str(i+1)
@@ -35,26 +35,33 @@ for i in range(m):
 matrix_array = np.array(matrix_list)
 
 def check_zero_rows():
-	global matrix_list, matrix_array, m, n
+	global matrix_list, matrix_array, m, n, nonzero_rows
+	zero_count = 0;
 	count = 0
-	for i in range(m):
-		if np.all(matrix_array[i] == 0) == True:
-			row_moved = matrix_array[i]
-			matrix_array = np.delete(matrix_array, (i), axis = 0)
+	while count < nonzero_rows:
+		if np.all(matrix_array[count] == 0) == True:
+			row_moved = matrix_array[count]
+			matrix_array = np.delete(matrix_array, (count), axis = 0)
+			zero_count += 1
+			nonzero_rows -= 1
+			# number_row_moved += 1
+		else:
 			count += 1
-	m -= count
-	for i in range(count):
+	for i in range(zero_count):
 		matrix_array = np.append(matrix_array, [row_moved], axis = 0)
 
-check_zero_rows()
-print(m)
-# check_zero_rows()
-print(matrix_array)
+# number_row_moved = 0
+nonzero_rows = m
 
-# for j in range(0, n-2):
-# 	for i in range(j+1, m):
-# 		matrix_array[i] = matrix_array[i] - ((matrix_array[i][j]/matrix_array[j][j])*matrix_array[j])
-# 		check_zero_rows()
+check_zero_rows()
+
+for j in range(n-1):
+	number_row = j + 1
+	while number_row < nonzero_rows:
+		matrix_array[number_row] = matrix_array[number_row] - ((matrix_array[number_row][j]/matrix_array[j][j])*matrix_array[j])
+		number_row += 1
+		check_zero_rows()
+		print(nonzero_rows)
 # for i in range(2, m):
 # 	matrix_array[i] = matrix_array[i] - ((matrix_array[i][1]/matrix_array[1][1])*matrix_array[1])
 # check_zero_rows()
