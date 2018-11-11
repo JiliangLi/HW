@@ -18,7 +18,7 @@ while True:
 m = dimension[0]
 n = dimension[1]
 
-rows = []
+rows= []
 matrix_list = [[0 for i in range(n)]for i in range(m)]
 for i in range(m):
 		position = "row "+str(i+1)
@@ -35,7 +35,7 @@ for i in range(m):
 matrix_array = np.array(matrix_list)
 
 def check_zero_rows():
-	global matrix_list, matrix_array, m, n, nonzero_rows
+	global matrix_list, matrix_array, m, n, nonzero_rows, zero_count
 	zero_count = 0;
 	count = 0
 	while count < nonzero_rows:
@@ -44,24 +44,50 @@ def check_zero_rows():
 			matrix_array = np.delete(matrix_array, (count), axis = 0)
 			zero_count += 1
 			nonzero_rows -= 1
-			# number_row_moved += 1
 		else:
 			count += 1
 	for i in range(zero_count):
 		matrix_array = np.append(matrix_array, [row_moved], axis = 0)
 
-# number_row_moved = 0
+def check_length_rows()
+	global nonzero_rows, matrix_array
+
+	matrix_array_check = matrix_array
+	for i range(nonzero_rows)::
+		
+		
 nonzero_rows = m
 
 check_zero_rows()
 
 for j in range(n-1):
-	number_row = j + 1
-	while number_row < nonzero_rows:
-		matrix_array[number_row] = matrix_array[number_row] - ((matrix_array[number_row][j]/matrix_array[j][j])*matrix_array[j])
-		number_row += 1
-		check_zero_rows()
-		print(nonzero_rows)
+	for i in range(j+1, nonzero_rows):
+		if i == j+1:
+
+				matrix_array[i] = matrix_array[i] - ((matrix_array[i][j]/matrix_array[j][j])*matrix_array[j])
+				check_zero_rows()
+		else:
+			if zero_count == 0:
+				if matrix_array[j][j] != 0:
+					matrix_array[i] = matrix_array[i] - ((matrix_array[i][j]/matrix_array[j][j])*matrix_array[j])
+					check_zero_rows()
+			else:
+				if matrix_array[j][j] != 0:
+					matrix_array[i-1] = matrix_array[i-1] - ((matrix_array[i-1][j]/matrix_array[j][j])*matrix_array[j])
+					check_zero_rows()
+print(nonzero_rows)
+for i in range(nonzero_rows):
+	if i != m-1:
+		for j in range(i+1, nonzero_rows):
+			if matrix_array[j][j] != 0:
+				# matrix_array[i] = matrix_array[i] - ((matrix_array[i][j]/matrix_array[j][j])*matrix_array[j])
+				matrix_array[i] = matrix_array[i] - ((matrix_array[i][j]/matrix_array[j][j])*matrix_array[j])
+
+# for i in range(nonzero_rows):
+# 	for j in range(i,n):
+# 		if j != 0:
+# 			matrix_array[i] = matrix_array[i]/matrix_array[i][j]
+# 			break
 # for i in range(2, m):
 # 	matrix_array[i] = matrix_array[i] - ((matrix_array[i][1]/matrix_array[1][1])*matrix_array[1])
 # check_zero_rows()
