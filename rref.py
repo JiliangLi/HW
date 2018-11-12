@@ -1,5 +1,17 @@
 import numpy as np
 
+class Row:
+	# constructor
+	def __init__(self, energy, name):
+		self.energy = energy
+		self.hunger = 5
+		self.weight = 30
+		self.happiness = 5
+		self.name = name
+
+	# methods - functions
+	def eat(self):
+
 while True:
 	try:
 		print("Please enter the dimension of the matrix: \n(for instance, if the matrix is a 2 by 5 matrix, enter 2*5)")
@@ -111,6 +123,17 @@ while i < nonzero_rows:
 	else:
 		i += 1
 
+for i in range(nonzero_rows):
+	for j in range(i+1, nonzero_rows):
+		for z in range(1,n):
+			if len_check(i) == (len_check(j) + z):
+				matrix_array[i] = matrix_array[i] - ((matrix_array[i][n+z-len_check(i)]/matrix_array[j][n+z-len_check(i)])*matrix_array[j])
+			
+for i in range(nonzero_rows):
+	matrix_array[i] = matrix_array[i]/(matrix_array[i][n-len_check(i)])
+	for j in range(n):
+		if matrix_array[i][j] == -0:
+			matrix_array[i][j] = 0
 	# i += 1
 # print(nonzero_rows)
 # for i in range(nonzero_rows):
