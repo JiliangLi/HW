@@ -1,16 +1,15 @@
 import numpy as np
 
-class Row:
-	# constructor
-	def __init__(self, energy, name):
-		self.energy = energy
-		self.hunger = 5
-		self.weight = 30
-		self.happiness = 5
-		self.name = name
+# class Row:
+# 	def __init__(self, ):
+# 		self.m = m
+# 		self.hunger = 5
+# 		self.weight = 30
+# 		self.happiness = 5
+# 		self.name = name
 
-	# methods - functions
-	def eat(self):
+# 	# methods - functions
+# 	def eat(self):
 
 while True:
 	try:
