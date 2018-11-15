@@ -148,11 +148,19 @@ class Matrix:
 
 		# for all values, round the answers so that the decimals do not get too lengthy
 		for i in range(m):
-			for j in range(n):
-				self.matrix[i][j] = round(self.matrix[i][j],3)
-				# because array calcualtions leave -0 as -0, we convert it to 0 instead
-				if self.matrix[i][j] == -0:
-					self.matrix[i][j] = 0
+			if calc_type == "inverse_calc":
+				# we need n*2 because the augmented matrix doubles the width of the matrix
+				for j in range(2*n):
+					self.matrix[i][j] = round(self.matrix[i][j],3)
+					# because array calcualtions leave -0 as -0, we convert it to 0 instead
+					if self.matrix[i][j] == -0:
+						self.matrix[i][j] = 0
+			else:
+				for j in range(n):
+					self.matrix[i][j] = round(self.matrix[i][j],3)
+					# because array calcualtions leave -0 as -0, we convert it to 0 instead
+					if self.matrix[i][j] == -0:
+						self.matrix[i][j] = 0
 					
 		# return the result directly if the user chooses the rref calculation
 		if calc_type == "rref":
