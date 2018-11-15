@@ -114,7 +114,7 @@ def output():
 		else:			# error checking
 			print("Please enter 1 or 2 to indicate you choice.")
 
-#run the runctions
+#run the functions
 entry()
 output()
 
