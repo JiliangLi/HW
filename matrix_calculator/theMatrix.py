@@ -186,5 +186,5 @@ class Matrix:
 		
 		# if it is indicated that the method is doing inverse_calc
 		else:
-			return self.matrix[:m,m:]			# return only the augmented matrix
+			return self.matrix[:m,m:]			# return only the augmented identity matrix
 
