@@ -21,16 +21,16 @@
 #	
 # inverse calcualtion explained:
 #	one of the many ways to get the inverse of the invertible matrix A is that:
-#		we augment I to to A
+#		augment I to to A
 #		do all row operations that lead A to its rref form (in this case because A is invertible rref(A)=I) to the augmented I as well
 #		when A is reduced to its rref form, the agumented matrix I becomes A's inverse
 
 # the program askes the user to generate a matrix based on:
 #	1) the size of the matrix
 #	2) each entry in the matrixautomatically
-# the program askes the user to choose between rref and inverse
+# the program askes the user to choose between rref and inverse calculation
 # based on the user's choice, the program calculates the corresponding matrix
-# the program prints out the rref form of the matrix in a nice grid
+# the program prints out the inverse as it is, and it prints out the rref form of the matrix in a nice grid
 
 # link file
 from theMatrix import Matrix
@@ -48,7 +48,7 @@ def print_matrix(mat):
 			print(entry,end='')
 			print('|',end='')		# add vertical lines in the middle and on the right
 		print()
-		print(' '+'-'*c+' ')		# add horizontal line in the middle and on the bottom
+		print(' '+'-'*c+' ')		# add horizontal lines in the middle and on the bottom
 
 
 # the function askes for the user's input and has error checking abilities
@@ -65,7 +65,7 @@ def entry():
 				break
 			else:
 				print("please enter a valid dimension connected by '*'")
-			break
+			
 
 		except ValueError:
 			print("Please enter a valid dimension connected by '*'")
@@ -81,7 +81,7 @@ def entry():
 					while True:
 						rowi = input()
 						rowi = rowi.split()			# allows for the program to take in multiple entries at a time
-						if len(rowi) == dimension[1]:	#check to see if the entries correspond with the size of the matrix
+						if len(rowi) == dimension[1]:	#check to see if the number of entries correspond with the size of the matrix
 							matrix_list[i] = rowi
 							break
 						else:
@@ -97,7 +97,7 @@ def entry():
 	the_matrix = Matrix(matrix_list,dimension[0],dimension[1])			# generate the matrix in the class defined in the separate file
 
 
-#the function asks the user for hte type fo calculation and prints out the result
+# the function asks the user for the type fo calculation and prints out the result
 def output():
 	print("Would you like to find:\n    1)The rref\n    2)The inverse")				# asks the user for the type of calculation
 	while True:
